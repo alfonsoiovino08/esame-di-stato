@@ -1,0 +1,754 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Costituzione Italiana - Educazione Civica</title>
+
+  <style>
+    /* Reset e Variabili Globali per un design moderno, istituzionale ed elegante */
+    :root {
+      --primary-color: #006643;    /* Verde istituzionale elegante, desaturato */
+      --secondary-color: #9d222a;  /* Rosso granata raffinato */
+      --accent-color: #005a9c;     /* Blu reale per i titoli di sezione */
+      --bg-light: #f7f9fa;         /* Grigio chiarissimo freddo per lo sfondo */
+      --bg-card: #ffffff;          /* Bianco puro per i blocchi di contenuto */
+      --text-main: #2b303a;        /* Antracite per massima leggibilità */
+      --text-muted: #5a6578;       /* Grigio medio per i testi secondari */
+      --border-color: #e2e8f0;     /* Grigio chiaro per bordi e separatori */
+      --nav-bg: #111625;           /* Blu notte scuro per la navigazione */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* Header con tricolore accennato in modo sofisticato ed elegante */
+    header {
+      background: linear-gradient(135deg, #fdfdfd 0%, #f4f6f8 100%);
+      text-align: center;
+      padding: 80px 24px;
+      position: relative;
+      border-bottom: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    /* Sottili linee decorative tricolore sopra l'header */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(to right, #008C45 33.3%, #f4f5f0 33.3%, #f4f5f0 66.6%, #CD212A 66.6%);
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* Barra di Navigazione Moderna Sticky */
+    nav {
+      background-color: var(--nav-bg);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+
+    nav li {
+      margin: 0;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 18px 16px;
+      display: block;
+      transition: all 0.25s ease;
+      border-bottom: 3px solid transparent;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.04);
+      border-bottom: 3px solid var(--primary-color);
+    }
+
+    /* Layout delle Sezioni Alternato */
+    section {
+      padding: 80px 12%;
+      display: flex;
+      justify-content: center;
+    }
+
+    section:nth-child(even) {
+      background-color: #ffffff;
+    }
+
+    section:nth-child(odd) {
+      background-color: var(--bg-light);
+    }
+
+    /* Card Contenitore Minimal e Pulita */
+    .card {
+      background: var(--bg-card);
+      padding: 50px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border-color);
+      width: 100%;
+      max-width: 900px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+    }
+
+    /* Tipografia e Titoli */
+    h2 {
+      color: var(--accent-color);
+      margin-bottom: 30px;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      border-left: 5px solid var(--primary-color);
+      padding-left: 18px;
+    }
+
+    /* Personalizzazione colore del titolo in base ad alcune materie simbolo */
+    #storia h2, #filosofia h2 {
+      color: var(--secondary-color);
+      border-left-color: var(--secondary-color);
+    }
+    
+    #costituzione h2, #italiano h2 {
+      color: var(--primary-color);
+      border-left-color: var(--primary-color);
+    }
+
+    p {
+      margin-bottom: 22px;
+      font-size: 1.1rem;
+      color: var(--text-main);
+      text-align: justify;
+    }
+
+    strong {
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* Liste stilizzate */
+    ul {
+      margin-left: 0;
+      margin-bottom: 25px;
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    li::before {
+      content: "•";
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.4rem;
+      position: absolute;
+      left: 5px;
+      top: -2px;
+    }
+
+    /* Citazioni eleganti e rifinite */
+    .quote {
+      margin: 30px 0;
+      padding: 24px 30px;
+      border-left: 4px solid var(--secondary-color);
+      background: #fff5f5;
+      font-style: italic;
+      font-size: 1.15rem;
+      border-radius: 0 8px 8px 0;
+      color: #4a1518;
+    }
+    
+    #storia .quote, #filosofia .quote {
+      border-left-color: var(--primary-color);
+      background: #f0fdf4;
+      color: #14532d;
+    }
+
+    /* Box Formula scientifico e pulito */
+    .formula {
+      background: #edf2f7;
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-family: 'Courier New', Courier, monospace;
+      display: inline-block;
+      margin-top: 15px;
+      border: 1px solid #cbd5e0;
+      color: #2d3748;
+      font-size: 1.05rem;
+    }
+
+    /* Footer Istituzionale */
+    footer {
+      background: var(--nav-bg);
+      color: #a0aec0;
+      text-align: center;
+      padding: 45px 20px;
+      font-size: 1rem;
+      border-top: 4px solid var(--primary-color);
+    }
+
+    footer p {
+      color: #cbd5e0;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    /* Responsività per dispositivi mobili */
+    @media (max-width: 768px) {
+      header {
+        padding: 50px 20px;
+      }
+      header h1 {
+        font-size: 2.4rem;
+      }
+      section {
+        padding: 40px 5%;
+      }
+      .card {
+        padding: 30px 20px;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        padding: 12px 20px;
+        width: 100%;
+        text-align: center;
+        border-bottom: none;
+      }
+      nav a:hover {
+        border-bottom: none;
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>La Costituzione Italiana</h1>
+
+  <p>
+    Percorso interdisciplinare di Educazione Civica collegato
+    alle principali materie scolastiche.
+  </p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#costituzione">Costituzione Italiana</a></li>
+    <li><a href="#storia">Storia</a></li>
+    <li><a href="#italiano">Italiano</a></li>
+    <li><a href="#inglese">Inglese</a></li>
+    <li><a href="#filosofia">Filosofia</a></li>
+    <li><a href="#religione">Religione</a></li>
+    <li><a href="#matematica">Matematica</a></li>
+    <li><a href="#fisica">Fisica</a></li>
+    <li><a href="#scienze">Scienze</a></li>
+    <li><a href="#informatica">Informatica</a></li>
+    <li><a href="#arte">Arte</a></li>
+    <li><a href="#motorie">Scienze Motorie</a></li>
+  </ul>
+</nav>
+
+<section id="costituzione">
+  <div class="card">
+
+    <h2>La Costituzione Italiana</h2>
+
+    <p>
+      La Costituzione Italiana è la legge fondamentale dello Stato ed è entrata in vigore il 1° gennaio 1948,
+      dopo la fine della Seconda Guerra Mondiale e la caduta del fascismo. Essa rappresenta il fondamento
+      dell’ordinamento giuridico italiano e definisce i principi su cui si basa la Repubblica democratica.
+    </p>
+
+    <p>
+      La sua funzione principale è quella di garantire i diritti inviolabili dell’uomo e di disciplinare
+      l’organizzazione dello Stato. In questo modo assicura il rispetto della libertà, dell’uguaglianza
+      e della dignità della persona, ponendo limiti precisi all’esercizio del potere pubblico.
+    </p>
+
+    <p>
+      Un principio cardine della Costituzione è la separazione dei poteri, che consente di evitare
+      l’accentramento del potere e di garantire un equilibrio tra le diverse funzioni dello Stato.
+      Tali poteri sono tre: legislativo, esecutivo e giudiziario.
+    </p>
+
+    <p>
+      Il <strong>potere legislativo</strong> consiste nella funzione di produzione delle leggi.
+      In Italia è esercitato dal Parlamento, composto dalla Camera dei Deputati e dal Senato della Repubblica.
+      Il Parlamento rappresenta la volontà popolare e ha il compito di deliberare le norme fondamentali
+      che regolano la vita dello Stato.
+    </p>
+
+    <p>
+      Il <strong>potere esecutivo</strong> ha la funzione di dare attuazione alle leggi e di governare il Paese.
+      È esercitato dal Governo, formato dal Presidente del Consiglio e dai Ministri, i quali dirigono
+      l’amministrazione dello Stato e definiscono le politiche pubbliche nei vari settori.
+    </p>
+
+    <p>
+      Il <strong>potere giudiziario</strong> esercita la funzione giurisdizionale, ovvero applica le leggi
+      ai casi concreti e risolve le controversie. È affidato alla Magistratura, che deve operare in modo
+      autonomo e indipendente per garantire imparzialità e giustizia.
+    </p>
+
+    <p>
+      Tale articolazione dei poteri è essenziale per il corretto funzionamento dello Stato democratico,
+      in quanto garantisce il controllo reciproco tra le istituzioni e la tutela dei diritti dei cittadini.
+    </p>
+
+    <p>
+      Infine, la Costituzione svolge una funzione di garanzia, poiché limita il potere dello Stato,
+      e una funzione programmatica, in quanto indica gli obiettivi di progresso sociale,
+      tra cui la riduzione delle disuguaglianze, come sancito dall’articolo 3.
+    </p>
+
+  </div>
+</section>
+
+<section id="storia">
+  <div class="card">
+
+    <h2>Storia</h2>
+
+    <p>
+      La Costituzione Italiana venne approvata il 22 dicembre 1947
+      ed entrò in vigore il 1° gennaio 1948.
+      Fu scritta dall’Assemblea Costituente dopo la fine
+      della Seconda Guerra Mondiale e della dittatura fascista.
+    </p>
+
+    <p>
+      Dopo vent’anni di fascismo, l’Italia aveva bisogno
+      di ricostruire una società democratica fondata
+      sulla libertà, sull’uguaglianza e sulla partecipazione politica.
+    </p>
+
+    <p>
+      Un ruolo fondamentale fu svolto dalla Resistenza italiana,
+      composta da uomini e donne che combatterono contro
+      il nazifascismo per restituire libertà al Paese.
+    </p>
+
+    <div class="quote">
+      “L’Italia è una Repubblica democratica, fondata sul lavoro.”
+    </div>
+
+  </div>
+</section>
+
+<section id="italiano">
+  <div class="card">
+
+    <h2>Italiano</h2>
+
+    <p>
+      Un importante collegamento tra Italiano e Costituzione Italiana
+      riguarda Primo Levi, scrittore e testimone della Shoah.
+      Deportato nel campo di concentramento di Auschwitz,
+      raccontò la sua esperienza nel libro
+      <strong>“Se questo è un uomo”</strong>.
+    </p>
+
+    <p>
+      Attraverso la sua opera descrive
+      la perdita della dignità humana
+      durante il nazismo
+      e invita a riflettere
+      sull’importanza della libertà
+      e del rispetto dei diritti umani.
+    </p>
+
+    <p>
+      La Costituzione Italiana nasce proprio dopo gli orrori
+      della guerra e del fascismo
+      per garantire uguaglianza,
+      libertà e dignità a tutti i cittadini.
+    </p>
+
+    <div class="quote">
+      “Tutti i cittadini hanno pari dignità sociale
+      e sono uguali davanti alla legge.”
+    </div>
+
+  </div>
+</section>
+
+<section id="inglese">
+  <div class="card">
+
+    <h2>Inglese</h2>
+
+    <p>
+      La Costituzione Italiana può essere collegata
+      al tema dei diritti umani studiato nei Paesi anglofoni.
+    </p>
+
+    <p>
+      Documenti importanti come la Dichiarazione Universale
+      dei Diritti Umani del 1948 difendono valori fondamentali
+      come libertà, uguaglianza e dignità della persona.
+    </p>
+
+    <p>
+      Un altro importante collegamento riguarda il romanzo
+      “1984” di George Orwell,
+      che descrive una società totalitaria
+      in cui i cittadini perdono libertà e diritti.
+    </p>
+
+    <p>
+      La Costituzione Italiana nasce proprio per evitare
+      il ritorno di una dittatura
+      e per garantire la democrazia,
+      la libertà di pensiero
+      e la tutela dei cittadini.
+    </p>
+
+  </div>
+</section>
+
+<section id="filosofia">
+  <div class="card">
+
+    <h2>Filosofia</h2>
+
+    <p>
+      Marx criticò le forti disuguaglianze sociali create dal capitalismo,
+      dove la borghesia possedeva i mezzi di produzione
+      mentre il proletariato viveva in condizioni di sfruttamento
+      e povertà.
+    </p>
+
+    <p>
+      Secondo Marx, il lavoro doveva garantire dignità,
+      uguaglianza e diritti a tutti gli individui.
+      Questo pensiero può essere collegato direttamente
+      all’articolo 1 della Costituzione Italiana:
+    </p>
+
+    <div class="quote">
+      “L’Italia è una Repubblica democratica, fondata sul lavoro.”
+    </div>
+
+    <p>
+      La Costituzione tutela infatti i lavoratori,
+      garantisce il diritto al lavoro,
+      la libertà sindacale e la dignità della persona.
+    </p>
+
+    <p>
+      Inoltre, Marx sosteneva l’importanza
+      di una società più giusta ed equa,
+      principio che si ritrova anche nell’articolo 3
+      della Costituzione,
+      che afferma l’uguaglianza di tutti i cittadini
+      senza distinzioni economiche o sociali.
+    </p>
+
+  </div>
+</section>
+
+<section id="religione">
+  <div class="card">
+
+    <h2>Religione</h2>
+
+    <p>
+      La Costituzione garantisce la libertà religiosa
+      e il rispetto di tutte le confessioni.
+    </p>
+
+    <p>
+      Questo principio richiama valori come pace,
+      solidarietà, fratellanza e rispetto del prossimo.
+    </p>
+
+    <p>
+      L’articolo 2 della Costituzione riconosce
+      i diritti inviolabili dell’uomo
+      e richiede solidarietà politica,
+      economica e sociale.
+    </p>
+
+  </div>
+</section>
+
+<section id="matematica">
+  <div class="card">
+
+    <h2>Matematica</h2>
+
+    <p>
+      La matematica aiuta lo Stato ad analizzare
+      fenomeni economici e sociali attraverso dati,
+      grafici e statistiche.
+    </p>
+
+    <p>
+      Grazie alle percentuali è possibile studiare:
+    </p>
+
+    <ul>
+      <li>disoccupazione</li>
+      <li>crescita della popolazione</li>
+      <li>spesa pubblica</li>
+      <li>livello di istruzione</li>
+    </ul>
+
+    <p>
+      Lo Stato utilizza questi dati per garantire
+      uguaglianza e servizi pubblici ai cittadini.
+    </p>
+
+    <div class="formula">
+      Formula della percentuale:
+      (parte / totale) × 100
+    </div>
+
+  </div>
+</section>
+
+<section id="fisica">
+  <div class="card">
+
+    <h2>Fisica</h2>
+
+    <p>
+      La fisica contribuisce allo sviluppo scientifico
+      e tecnologico della società moderna.
+    </p>
+
+    <p>
+      Grazie alla ricerca scientifica
+      è possibile sviluppare nuove tecnologie,
+      migliorare le comunicazioni
+      e produrre energia in modo più efficiente.
+    </p>
+
+    <p>
+      Un tema importante riguarda
+      le energie rinnovabili,
+      come energia solare ed eolica,
+      fondamentali per ridurre l’inquinamento
+      e proteggere l’ambiente.
+    </p>
+
+    <p>
+      Questo collegamento richiama
+      l’articolo 9 della Costituzione,
+      che tutela l’ambiente e il paesaggio.
+    </p>
+
+  </div>
+</section>
+
+<section id="scienze">
+  <div class="card">
+
+    <h2>Scienze</h2>
+
+    <p>
+      Le scienze sono strettamente collegate alla tutela della salute,
+      dell’ambiente e al benessere della collettività, temi fondamentali
+      della Costituzione Italiana.
+    </p>
+
+    <p>
+      L’articolo 32 riconosce la salute come diritto fondamentale dell’individuo
+      e interesse della società, motivo per cui lo Stato deve garantire cure,
+      prevenzione e sistemi sanitari efficienti.
+    </p>
+
+    <p>
+      Le scienze naturali e biomediche permettono di studiare il corpo umano,
+      le malattie infettive, i vaccini e le terapie moderne, contribuendo
+      all’aumento dell’aspettativa e della qualità della vita.
+    </p>
+
+    <p>
+      Un altro aspetto importante riguarda l’ecologia: lo studio degli ecosistemi
+      mostra come aria, acqua, suolo e biodiversità siano elementi interconnessi.
+      L’alterazione di questi equilibri può causare cambiamenti climatici
+      e perdita di specie viventi.
+    </p>
+
+    <p>
+      Per questo motivo la Costituzione tutela anche l’ambiente,
+      impegnando lo Stato e i cittadini alla protezione del patrimonio naturale
+      e delle future generazioni.
+    </p>
+
+    <p>
+      La ricerca scientifica, quindi, non ha solo un valore teorico,
+      ma anche una forte responsabilità sociale: deve essere usata
+      per migliorare la vita dell’uomo senza compromettere l’equilibrio
+      del pianeta.
+    </p>
+
+  </div>
+</section>
+
+<section id="informatica">
+  <div class="card">
+
+    <h2>Informatica</h2>
+
+    <p>
+      L’informatica è collegata
+      alla cittadinanza digitale
+      e all’uso corretto della tecnologia.
+    </p>
+
+    <p>
+      Attraverso Internet e i social network,
+      le persone possono comunicare
+      e informarsi rapidamente.
+    </p>
+
+    <p>
+      Tuttavia esistono anche rischi,
+      come cyberbullismo,
+      fake news
+      e violazione della privacy.
+    </p>
+
+    <p>
+      La Costituzione tutela
+      la libertà personale
+      e il diritto all’informazione
+      anche nel mondo digitale.
+    </p>
+
+  </div>
+</section>
+
+<section id="arte">
+  <div class="card">
+
+    <h2>Arte</h2>
+
+    <p>
+      L’arte è collegata alla Costituzione Italiana, in particolare all’articolo 9,
+      che tutela il patrimonio storico e artistico del Paese.
+    </p>
+
+    <p>
+      L’Italia possiede un enorme patrimonio culturale fatto di monumenti,
+      musei e opere d’arte che rappresentano la sua storia e identità.
+    </p>
+
+    <p>
+      Proteggere l’arte significa conservare la memoria del passato
+      e trasmetterla alle future generazioni.
+    </p>
+
+    <p>
+      Inoltre, l’arte contribuisce alla crescita culturale della società
+      e alla formazione del senso di bellezza e identità collettiva.
+    </p>
+
+  </div>
+</section>
+
+<section id="motorie">
+  <div class="card">
+
+    <h2>Scienze Motorie</h2>
+
+    <p>
+      Lo sport promuove valori fondamentali
+      della convivenza civile:
+      rispetto delle regole,
+      inclusione e collaborazione.
+    </p>
+
+    <p>
+      Attraverso le attività sportive
+      si imparano fair play,
+      disciplina e lavoro di squadra.
+    </p>
+
+    <p>
+      Inoltre lo sport tutela la salute fisica e mentale,
+      collegandosi all’articolo 32 della Costituzione.
+    </p>
+
+  </div>
+</section>
+
+<footer>
+
+  <p>
+    Sito interdisciplinare di Educazione Civica
+    dedicato alla Costituzione Italiana
+  </p>
+
+</footer>
+
+</body>
+</html>
