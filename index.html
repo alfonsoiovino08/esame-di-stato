@@ -18,26 +18,56 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
+      color: #0f172a;
       line-height: 1.7;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+
+      /* PALETTE MODERNA BLU-VIOLA */
+      background: linear-gradient(135deg,
+        #0f172a 0%,
+        #1e3a8a 25%,
+        #2563eb 45%,
+        #06b6d4 70%,
+        #8b5cf6 100%
+      );
+      background-size: 300% 300%;
+      animation: moveBG 16s ease infinite;
+    }
+
+    @keyframes moveBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* overlay chiaro per leggibilità */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.88);
+      pointer-events: none;
     }
 
     header {
       text-align: center;
       padding: 80px 20px 40px;
+      position: relative;
     }
 
     header h1 {
       font-size: 3em;
       font-weight: 600;
       margin-bottom: 20px;
+      color: #0f172a;
     }
 
     header p {
       font-style: italic;
       font-size: 1.3em;
-      color: #93c5fd;
+      color: #1d4ed8;
       max-width: 800px;
       margin: 0 auto;
     }
@@ -46,27 +76,31 @@
       max-width: 900px;
       margin: auto;
       padding: 20px;
+      position: relative;
     }
 
     section {
       margin: 35px 0;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      padding: 25px;
+      border-radius: 18px;
+
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(37, 99, 235, 0.15);
     }
 
     h2 {
       font-size: 1.4em;
-      color: #60a5fa;
+      color: #1d4ed8;
       margin-bottom: 10px;
       font-weight: 600;
     }
 
     p {
       font-weight: 300;
-      color: #cbd5e1;
+      color: #334155;
     }
 
-    /* BLOCCHI LINK */
     .links {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -77,22 +111,22 @@
     .card-link {
       display: block;
       padding: 20px;
-      border-radius: 12px;
-      background: rgba(30, 41, 59, 0.8);
-      border: 1px solid rgba(147, 197, 253, 0.2);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(37, 99, 235, 0.2);
       text-decoration: none;
-      color: #e2e8f0;
-      transition: 0.3s ease;
+      color: #0f172a;
+      transition: 0.25s ease;
     }
 
     .card-link:hover {
-      transform: translateY(-5px);
-      border-color: #93c5fd;
-      background: rgba(30, 41, 59, 1);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(2, 6, 23, 0.15);
+      border-color: #2563eb;
     }
 
     .card-link h3 {
-      color: #93c5fd;
+      color: #2563eb;
       margin-bottom: 8px;
     }
 
@@ -100,7 +134,8 @@
       text-align: center;
       padding: 40px 20px;
       font-size: 0.9em;
-      color: #94a3b8;
+      color: #1f2937;
+      position: relative;
     }
   </style>
 </head>
@@ -117,44 +152,42 @@
     <section>
       <h2>Chi sono</h2>
       <p>
-        Mi chiamo Alfonso Iovino e ho frequentato il Liceo “B. Pascal” di Pompei,
-        nella sezione C ad indirizzo Scienze Applicate.
+        Mi chiamo Alfonso Iovino e ho frequentato il Liceo “E. Pascal” di Pompei,
+        nella sezione C dell’indirizzo Scienze Applicate. Durante il mio percorso scolastico
+        ho sviluppato interesse per le discipline scientifiche e per il lavoro di gruppo,
+        elementi che hanno contribuito alla mia crescita personale e formativa.
       </p>
     </section>
 
     <section>
-      <h2>Esperienze formative</h2>
+      <h2>Esperienze scolastiche e formative</h2>
       <p>
-        Negli anni scolastici ho fatto parte del gruppo scout Pompei 2, vivendo esperienze
-        di crescita personale e collaborazione con gli altri.
+        Nel corso degli anni ho partecipato a diversi tornei sportivi scolastici di pallavolo e calcio,
+        organizzati all’interno dell’istituto. Queste attività mi hanno permesso di rafforzare
+        lo spirito di squadra, la disciplina e la capacità di collaborare per un obiettivo comune.
       </p>
     </section>
 
     <section>
-      <h2>Attività sportive</h2>
+      <h2>Esperienze extra-scolastiche</h2>
       <p>
-        Ho partecipato a diversi tornei scolastici di pallavolo e calcio,
-        sviluppando spirito di squadra e determinazione.
-      </p>
-    </section>
-
-    <section>
-      <h2>Esperienza lavorativa</h2>
-      <p>
-        Ho svolto un’esperienza lavorativa che mi ha permesso di acquisire
-        responsabilità e nuove competenze pratiche.
+        Ho fatto parte del gruppo Scout Pompei 2, un’esperienza significativa che mi ha aiutato
+        a sviluppare competenze utili per il futuro, come il senso di responsabilità,
+        l’autonomia e la collaborazione. Questo percorso ha contribuito in modo importante
+        alla mia crescita personale e al mio modo di rapportarmi con gli altri.
       </p>
     </section>
 
     <section>
       <h2>Obiettivi futuri</h2>
       <p>
-        In futuro vorrei intraprendere un percorso universitario come tecnico di radiologia,
-        con l’obiettivo di lavorare in ambito sanitario.
+        Il mio obiettivo è intraprendere un percorso universitario in Tecniche di Radiologia,
+        con la finalità di lavorare in ambito sanitario. Sono motivato a costruire un futuro
+        professionale in cui poter contribuire concretamente al benessere delle persone,
+        unendo competenze tecniche e senso di responsabilità.
       </p>
     </section>
 
-    <!-- NUOVI BLOCCHI LINK -->
     <section>
       <h2>Collegamenti</h2>
 
