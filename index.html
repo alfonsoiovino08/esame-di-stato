@@ -93,6 +93,15 @@
       border: 1px solid rgba(37, 99, 235, 0.15);
     }
 
+    .section-photo {
+      display: block;
+      max-width: 100%;
+      width: 350px;
+      margin: 20px auto 0;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
     h2 {
       font-size: 1.4em;
       color: #1d4ed8;
@@ -114,10 +123,13 @@
 
     .card-link {
       display: block;
+      max-width: 400px;
+      margin: 15px auto 0;
+      text-align: center;
       padding: 20px;
       border-radius: 16px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(37, 99, 235, 0.2);
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(37,99,235,0.2);
       text-decoration: none;
       color: #0f172a;
       transition: 0.25s ease;
@@ -133,6 +145,23 @@
       color: #2563eb;
       margin-bottom: 8px;
     }
+
+    .button-sections {
+  display: flex;
+  gap: 20px;
+  margin: 35px 0;
+  flex-wrap: wrap;
+}
+
+.button-section {
+  flex: 1;
+  min-width: 280px;
+  padding: 25px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
 
     footer {
       text-align: center;
@@ -155,14 +184,16 @@
   <main>
 
     <section>
-      <h2>Chi sono</h2>
-      <p>
-        Mi chiamo Alfonso Iovino e ho frequentato il Liceo “E. Pascal” di Pompei,
-        nella sezione C dell’indirizzo Scienze Applicate. Durante il mio percorso scolastico
-        ho sviluppato interesse per le discipline scientifiche e per il lavoro di gruppo,
-        elementi che hanno contribuito alla mia crescita personale e formativa.
-      </p>
-    </section>
+  <h2>Chi sono</h2>
+  <p>
+    Mi chiamo Alfonso Iovino e ho frequentato il Liceo “E. Pascal” di Pompei,
+    nella sezione C dell’indirizzo Scienze Applicate. Durante il mio percorso scolastico
+    ho sviluppato interesse per le discipline scientifiche e per il lavoro di gruppo,
+    elementi che hanno contribuito alla mia crescita personale e formativa.
+  </p>
+
+  <img src="foto1.jpeg" alt="Foto di Alfonso Iovino" class="section-photo">
+</section>
 
     <section>
       <h2>Esperienze scolastiche e formative</h2>
@@ -174,14 +205,16 @@
     </section>
 
     <section>
-      <h2>Esperienze extra-scolastiche</h2>
-      <p>
-        Ho fatto parte del gruppo Scout Pompei 2, un’esperienza significativa che mi ha aiutato
-        a sviluppare competenze utili per il futuro, come il senso di responsabilità,
-        l’autonomia e la collaborazione. Questo percorso ha contribuito in modo importante
-        alla mia crescita personale e al mio modo di rapportarmi con gli altri.
-      </p>
-    </section>
+  <h2>Esperienze extra-scolastiche</h2>
+  <p>
+    Ho fatto parte del gruppo Scout Pompei 2, un’esperienza significativa che mi ha aiutato
+    a sviluppare competenze utili per il futuro, come il senso di responsabilità,
+    l’autonomia e la collaborazione. Questo percorso ha contribuito in modo importante
+    alla mia crescita personale e al mio modo di rapportarmi con gli altri.
+  </p>
+
+  <img src="foto2.jpeg" alt="Esperienza Scout" class="section-photo">
+</section>
 
     <section>
       <h2>Obiettivi futuri</h2>
@@ -193,23 +226,27 @@
       </p>
     </section>
 
-    <section>
-      <h2>Collegamenti</h2>
+    <div class="button-sections">
 
-      <div class="links">
+  <section class="button-section">
+    <h2>Educazione Civica</h2>
 
-        <a class="card-link" href="edcivica.html" target="_blank">
-          <h3>Educazione Civica</h3>
-          <p>Vai al sito dedicato al progetto di Educazione Civica.</p>
-        </a>
+    <a class="card-link" href="edcivica.html" target="_blank">
+      <h3>Apri il progetto</h3>
+      <p>Accedi al sito dedicato all'Educazione Civica.</p>
+    </a>
+  </section>
 
-        <a class="card-link" href="pcto-fsl.pdf" target="_blank">
-          <h3>PCTO / FSL</h3>
-          <p>Apri il documento PDF con i percorsi svolti.</p>
-        </a>
+  <section class="button-section">
+    <h2>PCTO / FSL</h2>
 
-      </div>
-    </section>
+    <a class="card-link" href="pcto-fsl.pdf" target="_blank">
+      <h3>Apri il documento</h3>
+      <p>Visualizza il PDF con le attività svolte.</p>
+    </a>
+  </section>
+
+</div>
 
   </main>
 
